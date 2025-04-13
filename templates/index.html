@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>CSV Analiz Arayüzü</title>
+</head>
+<body>
+    <h2>CSV Dosya Yükle ve Analiz Et</h2>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Gönder</button>
+    </form>
+
+    {% if response %}
+        <h3>OpenAI Analizi:</h3>
+        <pre>{{ response }}</pre>
+    {% endif %}
+
+    {% if chart %}
+        <h3>Grafik:</h3>
+        <img src="{{ chart }}" alt="Veri Grafiği">
+    {% endif %}
+</body>
+</html>
